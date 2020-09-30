@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <aidl
+        binder="com.nullpt.toolsservice.manager.BookManagerService"
+        stub="com.nullpt.toolsservice.manager.IBookManager.Stub"
+        tag="TOOL_TEST" />
+</resources>

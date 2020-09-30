@@ -8,6 +8,7 @@ import com.nullpt.toolsservice.ToolsManagerTag.TOOL_BOOK_MANAGER
 import com.nullpt.toolsservice.ToolsManagerTag.TOOL_MEDIA_MANAGER
 import com.nullpt.toolsservice.aidl.Book
 import com.nullpt.toolsservice.callback.OnMediaProgressListener
+import com.nullpt.toolsservice.expand.ToolsXMLReader
 import com.nullpt.toolsservice.manager.IBookManager
 import com.nullpt.toolsservice.manager.IMediaPlayerManager
 import kotlinx.android.synthetic.main.activity_main.*
@@ -29,6 +30,8 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        ToolsXMLReader().parser(resources.getXml(R.xml.aidls))
 
         //测试跨进程服务通信
         addBook.setOnClickListener {
