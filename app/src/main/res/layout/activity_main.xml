@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <Button
+        android:id="@+id/addBook"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="add Book"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/getBooks"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="get Books"
+        app:layout_constraintTop_toBottomOf="@id/addBook" />
+
+    <Button
+        android:id="@+id/register"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="register"
+        app:layout_constraintTop_toBottomOf="@id/getBooks" />
+
+    <Button
+        android:id="@+id/play"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="play"
+        app:layout_constraintTop_toBottomOf="@id/register" />
+
+    <Button
+        android:id="@+id/pause"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="pause"
+        app:layout_constraintTop_toBottomOf="@id/play" />
+
+    <ProgressBar
+        android:id="@+id/progress"
+        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:max="1000"
+        app:layout_constraintTop_toBottomOf="@id/pause" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
