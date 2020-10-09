@@ -12,7 +12,7 @@ class App : Application() {
 
     override fun onCreate() {
         super.onCreate()
-        Tools.init(this)
+        Tools.init(this, R.xml.aidls)
     }
 
 

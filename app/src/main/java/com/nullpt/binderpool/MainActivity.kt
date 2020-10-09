@@ -31,8 +31,6 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        ToolsXMLReader().parser(resources.getXml(R.xml.aidls))
-
         //测试跨进程服务通信
         addBook.setOnClickListener {
             mBookManager?.addBook(Book("热爱Android", "BGQ"))

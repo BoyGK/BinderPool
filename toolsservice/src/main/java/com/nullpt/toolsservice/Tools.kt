@@ -2,6 +2,7 @@ package com.nullpt.toolsservice
 
 import android.content.Context
 import android.os.IInterface
+import com.nullpt.toolsservice.expand.ToolsXMLReader
 
 /**
  * @author BGQ
@@ -18,9 +19,13 @@ object Tools {
     /**
      * 初始化
      * @param context
+     * @param expId      扩展aidl配置文件
      * @param waitFinish 是否阻塞服主线程，直到服务绑定成功（参数暂时无用）
      */
-    fun init(context: Context, waitFinish: Boolean = false) {
+    fun init(context: Context, expId: Int = -1, waitFinish: Boolean = false) {
+        if (expId != -1) {
+            ToolsXMLReader.parser(context.resources.getXml(expId))
+        }
         mToolsConnection.initTools(context)
     }
 

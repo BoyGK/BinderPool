@@ -9,6 +9,7 @@ import android.os.IBinder
 import android.os.IInterface
 import com.nullpt.toolsservice.ToolsManagerTag.TOOL_BOOK_MANAGER
 import com.nullpt.toolsservice.ToolsManagerTag.TOOL_MEDIA_MANAGER
+import com.nullpt.toolsservice.expand.ToolsXMLReader
 import com.nullpt.toolsservice.manager.IBookManager
 import com.nullpt.toolsservice.manager.IMediaPlayerManager
 
@@ -77,8 +78,21 @@ class ToolsConnection {
             TOOL_MEDIA_MANAGER -> {
                 IMediaPlayerManager.Stub.asInterface(mBinderPool?.queryBinder(tag))
             }
-            else -> null
+            else -> expandService(tag)
         }
+    }
+
+    /**
+     * 自定义扩展
+     */
+    private fun expandService(tag: String): IInterface? {
+        val stubClass = ToolsXMLReader.aidl.find { it.tag == tag }?.stub ?: ""
+        if (stubClass == "") {
+            return null
+        }
+        val targetClass = Class.forName(stubClass)
+        val asInterfaceMethod = targetClass.getMethod("asInterface", IBinder::class.java)
+        return asInterfaceMethod.invoke(null, mBinderPool?.queryBinder(tag)) as IInterface?
     }
 
     /**
