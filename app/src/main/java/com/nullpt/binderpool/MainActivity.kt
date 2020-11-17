@@ -1,6 +1,8 @@
 package com.nullpt.binderpool
 
+import android.os.AsyncTask
 import android.os.Bundle
+import android.os.Handler
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.nullpt.toolsservice.Tools
@@ -12,6 +14,8 @@ import com.nullpt.toolsservice.expand.ToolsXMLReader
 import com.nullpt.toolsservice.manager.IBookManager
 import com.nullpt.toolsservice.manager.IMediaPlayerManager
 import kotlinx.android.synthetic.main.activity_main.*
+import java.util.concurrent.Executors
+import java.util.concurrent.ThreadPoolExecutor
 
 /**
  * @author BGQ

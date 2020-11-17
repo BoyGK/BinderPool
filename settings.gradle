@@ -1,2 +1,2 @@
-include ':app', ':toolsservice'
+include ':app', ':toolsservice', ':lib'
 rootProject.name='BinderPool'
