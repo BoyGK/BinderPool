@@ -58,4 +58,13 @@
         app:layout_constraintRight_toLeftOf="@id/loading2"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <com.nullpt.binderpool.anim.ColorTextView
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="100dp"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
